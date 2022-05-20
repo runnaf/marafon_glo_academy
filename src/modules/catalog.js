@@ -5,7 +5,7 @@ import { categoryFilter } from "./filters";
 const catalog = () => {
   const btnCatalog = document.querySelector('.catalog-button > button');
   const catalogModal = document.querySelector('.catalog');
-  const catalogModalItems = document.querySelectorAll('.catalog li')
+  const catalogModalItems = document.querySelectorAll('.catalog-list')
   
   let isOpen = false
   
@@ -20,7 +20,6 @@ const catalog = () => {
   catalogModalItems.forEach((item) => {
     item.addEventListener('click', () => {
       const text = item.textContent;
-      console.log(text);
       getData().then((data) => {
         renderGoods(categoryFilter(data, text))
       });
